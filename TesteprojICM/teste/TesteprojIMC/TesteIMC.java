@@ -23,13 +23,14 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 50.0;
 		
-		//calcuclo
-		resultado.calculoIMC(paciente);
-		//diagnostico esperado
-		String diag = "Baixo peso muito grave";
-		//avaliacao
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
+		//avliacao do calculo do IMC
+		//Nota: o medoto Math.round() server para arredonda o valor 
+		//o resultado do calculo
+		assertEquals(15,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
+		String diag = "Baixo peso muito grave";
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
 	}
 	
 	@Test
@@ -37,13 +38,12 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 55.0;
 		
-		//calcuclo
-		resultado.calculoIMC(paciente);
-		//diagnostico esperado
-		String diag = "Baixo peso grave";
-		//avaliacao
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
+		//avaliacao do calculo do IMC
+		assertEquals(17,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
+		String diag = "Baixo peso grave";
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
 	}
 	
 	@Test
@@ -51,13 +51,12 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 59.0;
 		
-		//calcuclo
-		resultado.calculoIMC(paciente);
-		//diagnostico esperado
-		String diag = "Baixo peso";
-		//avaliacao
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
+		//avaliacao do calculo do IMC
+		assertEquals(18,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
+		String diag = "Baixo peso";
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
 	}
 	
 	@Test
@@ -65,13 +64,12 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 60.0;
 		
-		//calcuclo
-		resultado.calculoIMC(paciente);
-		//diagnostico esperado
-		String diag = "Peso normal";
-		//avaliacao
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
+		//avaliacao do calculo do IMC
+		assertEquals(19,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
+		String diag = "Peso normal";
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
 	}
 	
 	@Test
@@ -79,13 +77,12 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 90.0;
 		
-		//calcuclo
-		resultado.calculoIMC(paciente);
-		//diagnostico esperado
-		String diag = "Sobrepeso";
-		//avaliacao
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
+		//avaliacao do calculo do IMC
+		assertEquals(28,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
+		String diag = "Sobrepeso";
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));	
 	}
 	
 	@Test
@@ -93,41 +90,38 @@ public class TesteIMC {
 		paciente.alturaPaciente = 1.80;
 		paciente.pesoPaciente = 110.0;
 		
-		resultado.calculoIMC(paciente);
+		//avliacao do calculo do IMC
+		assertEquals(34,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
 		String diag = "Grau I";
-		
 		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
-		
-		
 	}
 	
 	@Test
 	public void testObesidadeGrauII() {
 		paciente.alturaPaciente = 1.80;
-		paciente.pesoPaciente = 129.0;
+		paciente.pesoPaciente = 120.0;
 		
-		resultado.calculoIMC(paciente);
+		//avliacao do calculo do IMC
+		assertEquals(37,Math.round(resultado.calculoIMC(paciente)),0);
 		
-		String diag = "Grau II";
-		
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
-		
-		
+		//avaliacao do diagnostico IMC
+		String diag = "Grau II";		
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));	
 	}
 	
 	@Test
 	public void testObesidadeGrauIII() {
 		paciente.alturaPaciente = 1.80;
-		paciente.pesoPaciente = 130.0;
+		paciente.pesoPaciente = 140.0;
 		
-		resultado.calculoIMC(paciente);
+		//avliacao do calculo do IMC
+		assertEquals(43,Math.round(resultado.calculoIMC(paciente)),0);
 		
+		//avaliacao do diagnostico IMC
 		String diag = "Grau III";
-		
-		assertEquals(diag,diagnostico.ResultadoIMC(resultado));
-		
-		
+		assertEquals(diag,diagnostico.ResultadoIMC(resultado));	
 	}
 
 }
